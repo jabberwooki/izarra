@@ -1,0 +1,38 @@
+name = Izarra
+description = Install the Izarra web site.
+version = 7.x-1.0
+core = 7.x
+
+; Contrib dependencies.
+dependencies[] = admin_menu_toolbar
+dependencies[] = block
+dependencies[] = boxes
+dependencies[] = context
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = field_group
+dependencies[] = filter_perms
+dependencies[] = help
+dependencies[] = l10n_update
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = module_filter
+dependencies[] = options
+dependencies[] = pathauto
+dependencies[] = taxonomy
+dependencies[] = dblog
+dependencies[] = search
+dependencies[] = shortcut
+dependencies[] = strongarm
+dependencies[] = token
+dependencies[] = views
+dependencies[] = webform
+
+; Features and custom modules.
+
+
+; Files.
+files[] = izarra.profile
+
+
+

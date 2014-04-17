@@ -1,0 +1,224 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the izarra installation profile.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function izarra_install() {
+  // Add text formats.
+  $filtered_html_format = array(
+    'format' => 'filtered_html',
+    'name' => 'Filtered HTML',
+    'weight' => 0,
+    'filters' => array(
+      // URL filter.
+      'filter_url' => array(
+        'weight' => 0,
+        'status' => 1,
+      ),
+      // HTML filter.
+      'filter_html' => array(
+        'weight' => 1,
+        'status' => 1,
+      ),
+      // Line break filter.
+      'filter_autop' => array(
+        'weight' => 2,
+        'status' => 1,
+      ),
+      // HTML corrector filter.
+      'filter_htmlcorrector' => array(
+        'weight' => 10,
+        'status' => 1,
+      ),
+    ),
+  );
+  $filtered_html_format = (object) $filtered_html_format;
+  filter_format_save($filtered_html_format);
+
+  $full_html_format = array(
+    'format' => 'full_html',
+    'name' => 'Full HTML',
+    'weight' => 1,
+    'filters' => array(
+      // URL filter.
+      'filter_url' => array(
+        'weight' => 0,
+        'status' => 1,
+      ),
+      // Line break filter.
+      'filter_autop' => array(
+        'weight' => 1,
+        'status' => 1,
+      ),
+      // HTML corrector filter.
+      'filter_htmlcorrector' => array(
+        'weight' => 10,
+        'status' => 1,
+      ),
+    ),
+  );
+  $full_html_format = (object) $full_html_format;
+  filter_format_save($full_html_format);  
+
+  // Insert default pre-defined Basic Page type into the database. For a complete
+  // list of available node type attributes, refer to the node type API
+  // documentation at: http://api.drupal.org/api/HEAD/function/hook_node_info.
+  $types = array(
+    array(
+      'type' => 'page',
+      'name' => st('Basic page'),
+      'base' => 'node_content',
+      'description' => st("Use <em>basic pages</em> for your static content, such as an 'About us' page."),
+      'custom' => 1,
+      'modified' => 1,
+      'locked' => 0,
+    ),
+  );
+
+  foreach ($types as $type) {
+    $type = node_type_set_defaults($type);
+    node_type_save($type);
+    node_add_body_field($type);
+  }
+
+  // Default "Basic page" to not be promoted and have comments disabled.
+  variable_set('node_options_page', array('status'));
+  variable_set('comment_page', COMMENT_NODE_HIDDEN);
+
+  // Don't display date and author information for "Basic page" nodes by default.
+  variable_set('node_submitted_page', FALSE);
+
+  // Allow visitor account creation with administrative approval.
+  variable_set('user_register', USER_REGISTER_ADMINISTRATORS_ONLY);
+
+  // Enable default permissions for system roles.
+  $filtered_html_permission = filter_permission_name($filtered_html_format);
+  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content', $filtered_html_permission));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content', $filtered_html_permission));
+
+  // Create a default role for site administrators, with all available permissions assigned.
+  $admin_role = new stdClass();
+  $admin_role->name = 'administrator';
+  $admin_role->weight = 2;
+  user_role_save($admin_role);
+  user_role_grant_permissions($admin_role->rid, array_keys(module_invoke_all('permission')));
+  // Set this as the administrator role.
+  variable_set('user_admin_role', $admin_role->rid);
+
+  // Assign user 1 the "administrator" role.
+  db_insert('users_roles')
+    ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
+    ->execute();
+
+  // Create a Home link in the main menu.
+  $item = array(
+    'link_title' => st('Home'),
+    'link_path' => '<front>',
+    'menu_name' => 'main-menu',
+  );
+  menu_link_save($item);
+
+  // Update the menu router information.
+  menu_rebuild();
+}
+
+/**
+ * Implements hook_install_tasks().
+ */
+function izarra_install_tasks(&$install_state) {
+	$tasks = array();
+
+	$tasks['izarra_install_theme'] = array(
+			'display_name' => st('Izarra install theme'),
+			'display' => TRUE,
+			'type' => 'normal',
+			'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+			'function' => '_izarra_install_theme',
+	);
+
+	$tasks['izarra_install_locale'] = array(
+			'display_name' => st('Izarra install locale'),
+			'display' => TRUE,
+			'type' => 'batch',
+			'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+			'function' => '_izarra_install_locale',
+	);
+
+	return $tasks;
+}
+
+/**
+ * Install task callback.
+ */
+function _izarra_install_theme() {
+
+	// Set default theme.
+	$default_theme = 'izarra';
+	$admin_theme = 'rubik';
+	theme_enable(array($default_theme));
+	theme_disable(array('bartik', 'garland', 'seven', 'stark'));
+	variable_set('theme_default', $default_theme);
+	variable_set('admin_theme', $admin_theme);
+	variable_set('node_admin_theme', TRUE);
+	
+  // Disable all blocks by default except system-main. Use context to enable them.
+  db_update('block')
+    ->fields(array('region' => -1))
+    ->condition(
+      db_or()
+        ->condition('delta', 'main', '!=')
+        ->condition('module', 'system', '!=')
+    )
+    ->execute();
+}
+
+/**
+ * Install task callback.
+ */
+function _izarra_install_locale(&$install_state) {
+	include_once DRUPAL_ROOT . '/includes/locale.inc';
+	$install_locale = $install_state['parameters']['locale'];
+	$enabled_langs = locale_language_list();
+
+	// Disable previously default English language.
+	if (array_key_exists('en', $enabled_langs)) {
+		db_update('languages')
+		->fields(array(
+		'enabled' => '0',
+		))
+		->condition('language', 'en')
+		->execute();
+	}
+	// Enable language FR on if no language has been selected.
+	if ($install_locale == 'en' && !array_key_exists('fr', $enabled_langs)) {
+		locale_add_language('fr', 'French', 'Français', LANGUAGE_LTR, '', 'fr', TRUE, TRUE);
+	}
+
+	// Build batch with l10n_update module.
+	// Second pass will only update translations of freshly installed modules.
+	// We force each step to refresh its cache, as modules may have been
+	// installed since last call.
+	$history = l10n_update_get_history(TRUE);
+	module_load_include('check.inc', 'l10n_update');
+	// This variable forces l10n_update to rebuild its projects list.
+	variable_set('l10n_update_rebuild_projects', 1);
+	$available = l10n_update_available_releases(TRUE);
+	$updates = l10n_update_build_updates($history, $available);
+
+	module_load_include('batch.inc', 'l10n_update');
+	$updates = _l10n_update_prepare_updates($updates, NULL, array());
+	// Overwrite previous translations, as the downloaded ones are the most recent, and valid.
+	$batch = l10n_update_batch_multiple($updates, LOCALE_IMPORT_OVERWRITE);
+
+	return $batch;
+}
+
+

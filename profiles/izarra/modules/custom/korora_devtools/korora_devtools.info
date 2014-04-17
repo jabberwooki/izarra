@@ -1,0 +1,15 @@
+name = Korora Dev Tools
+description = Development tools and modules
+core = 7.x
+package = Korora
+version = 7.x-1.0
+project = korora_devtools
+dependencies[] = context_ui
+dependencies[] = devel
+dependencies[] = diff
+dependencies[] = ds_ui
+dependencies[] = field_ui
+dependencies[] = omega_tools
+dependencies[] = views_ui
+features[features_api][] = api:2
+project path = profiles/izarra/modules/custom

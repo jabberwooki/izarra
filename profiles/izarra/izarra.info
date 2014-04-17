@@ -9,6 +9,7 @@ dependencies[] = block
 dependencies[] = boxes
 dependencies[] = context
 dependencies[] = ctools
+dependencies[] = ds
 dependencies[] = features
 dependencies[] = field_group
 dependencies[] = filter_perms

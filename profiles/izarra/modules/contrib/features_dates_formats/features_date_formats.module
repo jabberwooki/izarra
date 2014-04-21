@@ -3,7 +3,7 @@
 /**
  * Implements hook_features_api().
  */
-function features_date_formats_features_api() {dpm('toto');
+function features_date_formats_features_api() {
   return array(
     'features_date_format' => array(
       'name' => t('Date Format'),

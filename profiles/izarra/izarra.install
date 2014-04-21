@@ -221,4 +221,13 @@ function _izarra_install_locale(&$install_state) {
 	return $batch;
 }
 
+/**
+ * Enable feature Izarra Config
+ */
+function izarra_update_7001(&$sandbox) {
+	module_enable(array('feature_config_workflow'));
+	drupal_flush_all_caches();
+	
+	return t('Feature Izarra Config enabled successfully.');
+}
 

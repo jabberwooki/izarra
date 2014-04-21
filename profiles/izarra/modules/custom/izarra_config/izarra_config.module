@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Izarra Config feature.
+ */
+
+include_once 'izarra_config.features.inc';

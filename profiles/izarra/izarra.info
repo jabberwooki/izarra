@@ -30,7 +30,6 @@ dependencies[] = views
 dependencies[] = webform
 
 ; Features and custom modules.
-dependencies[] = izarra_config
 
 ; Files.
 files[] = izarra.profile

@@ -189,14 +189,14 @@ function _izarra_install_locale(&$install_state) {
 	$enabled_langs = locale_language_list();
 
 	// Disable previously default English language.
-	if (array_key_exists('en', $enabled_langs)) {
-		db_update('languages')
-		->fields(array(
-		'enabled' => '0',
-		))
-		->condition('language', 'en')
-		->execute();
-	}
+// 	if (array_key_exists('en', $enabled_langs)) {
+// 		db_update('languages')
+// 		->fields(array(
+// 		'enabled' => '0',
+// 		))
+// 		->condition('language', 'en')
+// 		->execute();
+// 	}
 	// Enable language FR on if no language has been selected.
 	if ($install_locale == 'en' && !array_key_exists('fr', $enabled_langs)) {
 		locale_add_language('fr', 'French', 'Français', LANGUAGE_LTR, '', 'fr', TRUE, TRUE);

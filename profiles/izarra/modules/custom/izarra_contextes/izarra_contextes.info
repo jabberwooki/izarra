@@ -1,0 +1,16 @@
+name = Izarra Contextes
+core = 7.x
+package = Izarra
+version = 7.x-1.0
+project = izarra_contextes
+dependencies[] = context
+dependencies[] = context_mobile_detect
+features[context][] = all
+features[context][] = desktop-all
+features[context][] = desktop-front
+features[context][] = front
+features[context][] = mobile-all
+features[context][] = mobile-front
+features[ctools][] = context:context:3
+features[features_api][] = api:2
+project path = profiles/izarra/modules/custom

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Izarra Contextes feature.
+ */
+
+include_once 'izarra_contextes.features.inc';

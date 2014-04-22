@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Izarra Homepage feature.
+ */
+
+include_once 'izarra_homepage.features.inc';

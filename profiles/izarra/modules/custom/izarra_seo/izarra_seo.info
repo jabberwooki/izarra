@@ -1,0 +1,14 @@
+name = Izarra SEO
+description = Define default settings for SEO
+core = 7.x
+package = Izarra
+version = 7.x-1.0
+project = izarra_seo
+dependencies[] = metatag
+dependencies[] = page_title
+dependencies[] = pathauto
+dependencies[] = redirect
+dependencies[] = transliteration
+dependencies[] = xmlsitemap
+features[features_api][] = api:2
+project path = profiles/izarra/modules/custom

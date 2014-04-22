@@ -32,6 +32,7 @@ features[menu_custom][] = menu-french-main-menu
 features[user_role][] = redacteur
 features[user_role][] = webmaster
 features[variable][] = configurable_timezones
+features[variable][] = cron_safe_threshold
 features[variable][] = date_default_timezone
 features[variable][] = date_first_day
 features[variable][] = date_format_long

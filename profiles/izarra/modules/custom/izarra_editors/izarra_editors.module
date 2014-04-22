@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Izarra Editors feature.
+ */
+
+include_once 'izarra_editors.features.inc';

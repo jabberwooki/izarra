@@ -19,7 +19,7 @@ function izarra_homepage_ctools_plugin_api($module = NULL, $api = NULL) {
 function izarra_homepage_node_info() {
   $items = array(
     'slide' => array(
-      'name' => t('Slide'),
+      'name' => t('Home slide'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

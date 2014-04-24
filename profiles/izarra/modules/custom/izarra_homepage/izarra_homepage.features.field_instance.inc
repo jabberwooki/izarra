@@ -24,6 +24,13 @@ function izarra_homepage_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'slider_v1' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -54,13 +61,23 @@ function izarra_homepage_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-slide-field_image_file'
-  $field_instances['node-slide-field_image_file'] = array(
+  // Exported field_instance: 'node-slide-field_bg_image'
+  $field_instances['node-slide-field_bg_image'] = array(
     'bundle' => 'slide',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 3,
+      ),
+      'slider_v1' => array(
         'label' => 'above',
         'module' => 'image',
         'settings' => array(
@@ -78,8 +95,8 @@ function izarra_homepage_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_image_file',
-    'label' => 'Image file',
+    'field_name' => 'field_bg_image',
+    'label' => 'Image de fond',
     'required' => 1,
     'settings' => array(
       'alt_field' => 0,
@@ -112,10 +129,15 @@ function izarra_homepage_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'i18n_taxonomy',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'slider_v1' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'teaser' => array(
@@ -144,7 +166,7 @@ function izarra_homepage_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
-  t('Image file');
+  t('Image de fond');
   t('Position');
 
   return $field_instances;

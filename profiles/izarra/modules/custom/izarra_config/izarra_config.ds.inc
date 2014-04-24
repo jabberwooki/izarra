@@ -1,0 +1,32 @@
+<?php
+/**
+ * @file
+ * izarra_config.ds.inc
+ */
+
+/**
+ * Implements hook_ds_view_modes_info().
+ */
+function izarra_config_ds_view_modes_info() {
+  $export = array();
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'slider_v1';
+  $ds_view_mode->label = 'Slider V1';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+  );
+  $export['slider_v1'] = $ds_view_mode;
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'slider_v2';
+  $ds_view_mode->label = 'Slider V2';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+  );
+  $export['slider_v2'] = $ds_view_mode;
+
+  return $export;
+}

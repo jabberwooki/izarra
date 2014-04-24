@@ -141,7 +141,7 @@ function izarra_config_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_main_links_source';
-  $strongarm->value = 'menu-french-main-menu';
+  $strongarm->value = 'main-menu';
   $export['menu_main_links_source'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -149,10 +149,7 @@ function izarra_config_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_page';
   $strongarm->value = array(
-    0 => 'menu-english-footer-menu',
-    1 => 'menu-english-main-menu',
-    2 => 'menu-french-footer-menu',
-    3 => 'menu-french-main-menu',
+    0 => 'menu-footer-menu',
   );
   $export['menu_options_page'] = $strongarm;
 
@@ -172,7 +169,7 @@ function izarra_config_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_page';
-  $strongarm->value = 'menu-french-main-menu:0';
+  $strongarm->value = 'menu-footer-menu:0';
   $export['menu_parent_page'] = $strongarm;
 
   $strongarm = new stdClass();

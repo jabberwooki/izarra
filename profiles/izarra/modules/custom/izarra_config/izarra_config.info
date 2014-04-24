@@ -69,6 +69,7 @@ features[variable][] = node_preview_page
 features[variable][] = node_preview_webform
 features[variable][] = node_submitted_page
 features[variable][] = node_submitted_webform
+features[variable][] = site_frontpage
 features[variable][] = site_slogan
 features[variable][] = user_default_timezone
 features[views_view][] = slides

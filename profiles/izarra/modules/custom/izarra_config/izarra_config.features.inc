@@ -46,3 +46,36 @@ function izarra_config_features_date_format_default() {
   );
   return $fdf_config;
 }
+
+/**
+ * Implements hook_image_default_styles().
+ */
+function izarra_config_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: full_page.
+  $styles['full_page'] = array(
+    'name' => 'full_page',
+    'label' => 'full_page',
+    'effects' => array(
+      1 => array(
+        'label' => 'Échelle',
+        'help' => 'La mise à l\'échelle maintiendra les proportions originales de l\'image. Si une seule dimension est précisée, l\'autre dimension sera calculée automatiquement.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 940,
+          'height' => '',
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}

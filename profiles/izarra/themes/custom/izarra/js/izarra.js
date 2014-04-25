@@ -4,7 +4,7 @@
       $(document).ready(function() {
     	/* Full screen display of image fields */
         // 1 - Define the target element(s).
-        var slides = $(".views-field-field-bg-image img", context); alert('tutu');
+        var slides = $(".views-field-field-bg-image img", context);
       
         // 2 - Resize on page load.
         slides.each( resize_slide );   

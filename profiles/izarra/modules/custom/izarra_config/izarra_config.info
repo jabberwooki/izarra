@@ -43,7 +43,6 @@ features[language][] = fr
 features[menu_custom][] = main-menu
 features[menu_custom][] = menu-footer-menu
 features[menu_links][] = main-menu_accueil:<front>
-features[menu_links][] = main-menu_au-fil-du-temps:historical-facts
 features[menu_links][] = main-menu_maison-izarra:<nolink>
 features[taxonomy][] = position
 features[user_role][] = redacteur

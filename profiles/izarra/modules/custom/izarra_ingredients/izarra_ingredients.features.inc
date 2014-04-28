@@ -8,29 +8,12 @@
  * Implements hook_ctools_plugin_api().
  */
 function izarra_ingredients_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "ds" && $api == "ds") {
+    return array("version" => "1");
+  }
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
-}
-
-/**
- * Implements hook_default_custom_pagers().
- */
-function izarra_ingredients_default_custom_pagers() {
-  $custom_pagers = array();
-
-  $custom_pagers[] = array(
-    'pid' => 1,
-    'title' => 'Ingredients',
-    'list_php' => '',
-    'view' => 'sorting',
-    'args' => '[type]',
-    'position' => 'block',
-    'visibility_php' => '',
-    'node_type' => 'ingredients',
-    'reverse_list' => 0,
-  );
-  return $custom_pagers;
 }
 
 /**

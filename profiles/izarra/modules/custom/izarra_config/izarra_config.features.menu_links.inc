@@ -28,7 +28,7 @@ function izarra_config_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 1,
+    'weight' => 0,
     'customized' => 1,
   );
   // Exported menu link: main-menu_maison-izarra:<nolink>
@@ -49,7 +49,7 @@ function izarra_config_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 1,
     'expanded' => 1,
-    'weight' => -15,
+    'weight' => -30,
     'customized' => 1,
   );
   // Translatables

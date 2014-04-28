@@ -32,6 +32,12 @@ function izarra_contextes_context_default_contexts() {
           'region' => 'content',
           'weight' => '10',
         ),
+        'custom_pagers-2' => array(
+          'module' => 'custom_pagers',
+          'delta' => '2',
+          'region' => 'content',
+          'weight' => '10',
+        ),
       ),
     ),
   );

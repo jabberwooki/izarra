@@ -23,7 +23,18 @@ function izarra_contextes_context_default_contexts() {
       ),
     ),
   );
-  $context->reactions = array();
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'custom_pagers-1' => array(
+          'module' => 'custom_pagers',
+          'delta' => '1',
+          'region' => 'content',
+          'weight' => '10',
+        ),
+      ),
+    ),
+  );
   $context->condition_mode = 0;
 
   // Translatables

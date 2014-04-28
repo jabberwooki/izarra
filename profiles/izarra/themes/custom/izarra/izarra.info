@@ -5,6 +5,9 @@ engine = 'phptemplate'
 screenshot = 'screenshot.png'
 base theme = 'omega'
 
+libraries[izarra0][name] = Izarra
+libraries[izarra0][js][1][file] = izarra.js
+
 libraries[izarra1][name] = Common
 libraries[izarra1][js][1][file] = common.js
 

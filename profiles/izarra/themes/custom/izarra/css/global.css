@@ -30,8 +30,8 @@ body {
 }
 
 #views_slideshow_controls_text_slides-page {
-	position: relative;
 	z-index: 20;
+	top: 50%;
 }
 
 #views_slideshow_controls_text_slides-page a {
@@ -50,13 +50,102 @@ body {
 	left: 0;
 }
 
-#views_slideshow_cycle_main_slides-page .text {
+#views_slideshow_cycle_main_slides-page .text{
+	background: rgba(0, 0, 0, 0.3);
+}
+
+/*POSITION DU TEXTE*/
+
+#views_slideshow_cycle_main_slides-page .text.hd {
 	position: absolute;
 	top: 10%;
-	left: 53%;
-	width: 262px;
-	height: 214px;
-	padding: 70px 90px 90px 105px;
+	right: 19%;
+	width: 500px;
+	height: auto;
 	color: #fff;
-	text-align: center;
+	text-align: left;
+	padding: 30px;
+}
+
+#views_slideshow_cycle_main_slides-page .text.hg {
+	position: absolute;
+	top: 10%;
+	left: 19%;
+	width: 500px;
+	height: auto;
+	color: #fff;
+	text-align: left;
+	padding: 30px;
+}
+
+#views_slideshow_cycle_main_slides-page .text.bd {
+	position: absolute;
+	bottom: 10%;
+	right: 19%;
+	width: 500px;
+	height: auto;
+	color: #fff;
+	text-align: left;
+	padding: 30px;
+}
+
+#views_slideshow_cycle_main_slides-page .text.bg {
+	position: absolute;
+	bottom: 10%;
+	left: 19%;
+	width: 500px;
+	height: auto;
+	color: #fff;
+	text-align: left;
+	padding: 30px;
+}
+
+/*CONTROLS NEXT PREVOUS SLIDESHOW*/
+
+#views_slideshow_controls_text_previous_slides-page a{
+	background:url("../images/arrow_left.png") no-repeat;
+	text-indent:-9999px;
+	position:absolute;
+	height:54px;
+	width:54px;
+	top: 50%;
+	z-index: 1000;
+	left:10%;
+}
+
+#views_slideshow_controls_text_next_slides-page a{
+	background:url("../images/arrow_right.png") no-repeat;
+	text-indent:-9999px;
+	position:absolute;
+	height:54px;
+	width:54px;
+	top: 50%;
+	z-index: 1000;
+	right:10%;
+}
+
+#views_slideshow_controls_text_pause_slides-page a{
+	text-indent:-9999px;
+	position:absolute;
+}
+
+/*TEXT SLIDESHOW*/
+.views-slideshow-cycle-main-frame-row-item .title{
+	text-transform: uppercase;
+	font-family: 'Helvetica Light', Arial, sans-serif;
+	font-size: 3.333em;
+	font-weight: normal;
+}
+.views-slideshow-cycle-main-frame-row-item .desc p{
+	color: white;
+	font-size: 1.167em;
+}
+
+.views-slideshow-cycle-main-frame-row-item .title:before{
+	content:'+';
+	padding-right: 5px;
+}
+.views-slideshow-cycle-main-frame-row-item .title.selected:before{
+	content:'–';
+	padding-right: 5px;
 }

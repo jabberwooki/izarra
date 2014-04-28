@@ -5,8 +5,11 @@ engine = 'phptemplate'
 screenshot = 'screenshot.png'
 base theme = 'omega'
 
-libraries[izarra][name] = Izarra
-libraries[izarra][js][0][file] = izarra.js
+libraries[izarra1][name] = Common
+libraries[izarra1][js][1][file] = common.js
+
+libraries[izarra2][name] = Izarra supersized
+libraries[izarra2][js][2][file] = izarrasupersized.js
 
 regions[page_top] = 'Page Top'
 regions[page_bottom] = 'Page Bottom'

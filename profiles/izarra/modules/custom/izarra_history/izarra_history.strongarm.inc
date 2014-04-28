@@ -20,7 +20,7 @@ function izarra_history_strongarm() {
         'custom_settings' => TRUE,
       ),
       'slider_v1' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'full' => array(
         'custom_settings' => TRUE,

@@ -1,0 +1,11 @@
+name = Izarra Phases
+core = 7.x
+package = Izarra
+version = 7.x-1.0
+project = izarra_phases
+dependencies[] = ctools
+dependencies[] = ds
+features[ctools][] = ds:ds:1
+features[ds_layout_settings][] = node|phase|full
+features[features_api][] = api:2
+project path = profiles/izarra/modules/custom

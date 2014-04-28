@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Izarra Phases feature.
+ */
+
+include_once 'izarra_phases.features.inc';

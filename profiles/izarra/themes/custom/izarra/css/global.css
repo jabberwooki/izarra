@@ -1,17 +1,62 @@
 /* This file will hold styles for the mobile version of your website (mobile first). */
 /* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. */
-.flexslider {
-border: none;
-margin: 0;
+
+body {
+	margin: 0;
+	padding: 0;
+	font: normal 12px arial, sans-serif;
+	color: #333;
+	position: relative;
+	height: 100%;
+	background: #f0efed;
+	overflow-y: scroll;
 }
-.flexslider .slides img {
-width: 100%;
-display: block;
-height: auto;
+
+#section-header {
+	display: block;
+	background: #222;
+	height: 100px;
+	color: #fff;
+	position: relative;
 }
-#zone-content,
-#region-content{
-width: 100%;
-margin-left: 0;
-margin-right: 0;
+
+#section-content {
+  position: relative;
+}
+
+#region-content {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+#views_slideshow_controls_text_slides-page {
+	position: relative;
+	z-index: 20;
+}
+
+#views_slideshow_controls_text_slides-page a {
+  color:white;
+}
+
+
+#views_slideshow_cycle_main_slides-page .slide {
+	overflow: hidden;
+	position: relative;
+}
+
+#views_slideshow_cycle_main_slides-page .illus img {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#views_slideshow_cycle_main_slides-page .text {
+	position: absolute;
+	top: 10%;
+	left: 53%;
+	width: 262px;
+	height: 214px;
+	padding: 70px 90px 90px 105px;
+	color: #fff;
+	text-align: center;
 }

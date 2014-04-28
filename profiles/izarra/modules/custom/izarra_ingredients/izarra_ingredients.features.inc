@@ -17,6 +17,33 @@ function izarra_ingredients_ctools_plugin_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function izarra_ingredients_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
+ * Implements hook_default_custom_pagers().
+ */
+function izarra_ingredients_default_custom_pagers() {
+  $custom_pagers = array();
+
+  $custom_pagers[] = array(
+    'pid' => 1,
+    'title' => 'Ingredients',
+    'list_php' => '',
+    'view' => 'ingredients',
+    'args' => '',
+    'position' => 'block',
+    'visibility_php' => '',
+    'node_type' => 'ingredients',
+    'reverse_list' => 0,
+  );
+  return $custom_pagers;
+}
+
+/**
  * Implements hook_node_info().
  */
 function izarra_ingredients_node_info() {

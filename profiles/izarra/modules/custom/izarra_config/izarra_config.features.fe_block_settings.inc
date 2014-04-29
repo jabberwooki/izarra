@@ -16,7 +16,9 @@ function izarra_config_default_fe_block_settings() {
     'cache' => -2,
     'custom' => 0,
     'delta' => 'izarra_social_networks',
-    'i18n_block_language' => array(),
+    'i18n_block_language' => array(
+      0 => 'fr',
+    ),
     'i18n_mode' => 0,
     'module' => 'boxes',
     'node_types' => array(),

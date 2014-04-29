@@ -52,10 +52,90 @@ function izarra_config_menu_default_menu_links() {
     'weight' => -30,
     'customized' => 1,
   );
+  // Exported menu link: menu-footer-menu_dossier-de-presse:node/28
+  $menu_links['menu-footer-menu_dossier-de-presse:node/28'] = array(
+    'menu_name' => 'menu-footer-menu',
+    'link_path' => 'node/28',
+    'router_path' => 'node/%',
+    'link_title' => 'Dossier de Presse',
+    'options' => array(
+      'node_type' => 'page',
+      'alter' => TRUE,
+      'identifier' => 'menu-footer-menu_dossier-de-presse:node/28',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -10,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-footer-menu_legal-notice:node/2
+  $menu_links['menu-footer-menu_legal-notice:node/2'] = array(
+    'menu_name' => 'menu-footer-menu',
+    'link_path' => 'node/2',
+    'router_path' => 'node/%',
+    'link_title' => 'Legal notice',
+    'options' => array(
+      'node_type' => 'page',
+      'alter' => TRUE,
+      'identifier' => 'menu-footer-menu_legal-notice:node/2',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 1,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-footer-menu_mentions-lgales:node/1
+  $menu_links['menu-footer-menu_mentions-lgales:node/1'] = array(
+    'menu_name' => 'menu-footer-menu',
+    'link_path' => 'node/1',
+    'router_path' => 'node/%',
+    'link_title' => 'Mentions légales',
+    'options' => array(
+      'node_type' => 'page',
+      'alter' => TRUE,
+      'identifier' => 'menu-footer-menu_mentions-lgales:node/1',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-footer-menu_press-pack:node/29
+  $menu_links['menu-footer-menu_press-pack:node/29'] = array(
+    'menu_name' => 'menu-footer-menu',
+    'link_path' => 'node/29',
+    'router_path' => 'node/%',
+    'link_title' => 'Press Pack',
+    'options' => array(
+      'node_type' => 'page',
+      'alter' => TRUE,
+      'identifier' => 'menu-footer-menu_press-pack:node/29',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -9,
+    'customized' => 1,
+  );
   // Translatables
   // Included for use with string extractors like potx.
   t('Accueil');
+  t('Dossier de Presse');
+  t('Legal notice');
   t('Maison Izarra');
+  t('Mentions légales');
+  t('Press Pack');
 
 
   return $menu_links;

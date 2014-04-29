@@ -23,7 +23,6 @@ features[ds_layout_settings][] = node|ingredients|full
 features[features_api][] = api:2
 features[field_instance][] = node-ingredients-body
 features[field_instance][] = node-ingredients-field_bg_image
-features[field_instance][] = node-ingredients-field_position
 features[field_instance][] = node-ingredients-field_subtitle
 features[node][] = ingredients
 features[variable][] = field_bundle_settings_node__ingredients

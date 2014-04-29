@@ -25,7 +25,7 @@ function izarra_products_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 1,
+    'weight' => 2,
     'customized' => 1,
     'parent_identifier' => 'main-menu_jauve-vert-et-54:node/17',
   );
@@ -44,7 +44,7 @@ function izarra_products_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => 1,
     'customized' => 1,
     'parent_identifier' => 'main-menu_jauve-vert-et-54:node/17',
   );

@@ -24,26 +24,6 @@ function izarra_products_views_api($module = NULL, $api = NULL) {
 }
 
 /**
- * Implements hook_default_custom_pagers().
- */
-function izarra_products_default_custom_pagers() {
-  $custom_pagers = array();
-
-  $custom_pagers[] = array(
-    'pid' => 2,
-    'title' => 'Produits',
-    'list_php' => '',
-    'view' => 'products',
-    'args' => '',
-    'position' => 'block',
-    'visibility_php' => '',
-    'node_type' => 'product',
-    'reverse_list' => 0,
-  );
-  return $custom_pagers;
-}
-
-/**
  * Implements hook_node_info().
  */
 function izarra_products_node_info() {

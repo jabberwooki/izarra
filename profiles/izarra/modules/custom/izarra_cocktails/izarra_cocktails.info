@@ -11,6 +11,7 @@ dependencies[] = views
 __drupal_alter_by_ref[][node][page] = page
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
+features[custom_pagers][] = 3
 features[fe_block_settings][] = custom_pagers-3
 features[features_api][] = api:2
 features[field_base][] = field_cocktail_type

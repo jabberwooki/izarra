@@ -21,6 +21,26 @@ function izarra_cocktails_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_default_custom_pagers().
+ */
+function izarra_cocktails_default_custom_pagers() {
+  $custom_pagers = array();
+
+  $custom_pagers[] = array(
+    'pid' => 3,
+    'title' => 'Cocktails',
+    'list_php' => '',
+    'view' => 'cocktails',
+    'args' => '[node:field_cocktail_type]',
+    'position' => 'block',
+    'visibility_php' => '',
+    'node_type' => 'cocktail',
+    'reverse_list' => 0,
+  );
+  return $custom_pagers;
+}
+
+/**
  * Implements hook_node_info().
  */
 function izarra_cocktails_node_info() {

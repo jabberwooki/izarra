@@ -52,12 +52,14 @@ function izarra_ingredients_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'field_bg_image',
         1 => 'title',
-        2 => 'body',
+        2 => 'field_subtitle',
+        3 => 'body',
       ),
     ),
     'fields' => array(
       'field_bg_image' => 'ds_content',
       'title' => 'ds_content',
+      'field_subtitle' => 'ds_content',
       'body' => 'ds_content',
     ),
     'classes' => array(),

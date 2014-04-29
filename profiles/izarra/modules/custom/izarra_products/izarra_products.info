@@ -17,6 +17,7 @@ features[ds_layout_settings][] = node|product|full
 features[features_api][] = api:2
 features[field_instance][] = node-product-body
 features[field_instance][] = node-product-field_bg_image
+features[field_instance][] = node-product-field_subtitle
 features[menu_links][] = main-menu_izarra-jaune:node/19
 features[menu_links][] = main-menu_izarra-vert:node/18
 features[menu_links][] = main-menu_jauve-vert-et-54:node/17

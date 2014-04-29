@@ -10,6 +10,25 @@
 function izarra_products_menu_default_menu_links() {
   $menu_links = array();
 
+  // Exported menu link: main-menu_izarra-54:node/20
+  $menu_links['main-menu_izarra-54:node/20'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'node/20',
+    'router_path' => 'node/%',
+    'link_title' => 'Izarra 54',
+    'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'main-menu_izarra-54:node/20',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 3,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_jauve-vert-et-54:node/17',
+  );
   // Exported menu link: main-menu_izarra-jaune:node/19
   $menu_links['main-menu_izarra-jaune:node/19'] = array(
     'menu_name' => 'main-menu',
@@ -72,6 +91,7 @@ function izarra_products_menu_default_menu_links() {
   );
   // Translatables
   // Included for use with string extractors like potx.
+  t('Izarra 54');
   t('Izarra jaune');
   t('Izarra vert');
   t('Jauve, Vert et 54');

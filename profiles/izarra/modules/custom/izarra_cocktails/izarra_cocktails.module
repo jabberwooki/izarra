@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Izarra Cocktails feature.
+ */
+
+include_once 'izarra_cocktails.features.inc';

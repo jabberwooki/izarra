@@ -178,9 +178,9 @@ function custom_pagers_form($form, &$form_state, $pid = NULL) {
     );
 
     if (module_exists('token')) {
-      // TODO Please change this theme call to use an associative array for the $variables parameter.
       $form['help']['tokens'] = array(
-        '#value' => theme('token_help', 'node'),
+        '#theme' => 'token_tree',
+        '#token_types' => array('node'),
       );
     }
     else {

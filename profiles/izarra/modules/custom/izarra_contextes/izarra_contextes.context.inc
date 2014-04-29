@@ -26,15 +26,21 @@ function izarra_contextes_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'custom_pagers-2' => array(
+          'module' => 'custom_pagers',
+          'delta' => '2',
+          'region' => 'content',
+          'weight' => '10',
+        ),
         'custom_pagers-1' => array(
           'module' => 'custom_pagers',
           'delta' => '1',
           'region' => 'content',
           'weight' => '10',
         ),
-        'custom_pagers-2' => array(
+        'custom_pagers-3' => array(
           'module' => 'custom_pagers',
-          'delta' => '2',
+          'delta' => '3',
           'region' => 'content',
           'weight' => '10',
         ),
